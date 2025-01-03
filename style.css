@@ -1,0 +1,236 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier Prime', monospace;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./images/PASSWORD\ CHECKER.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+
+.group {
+    display: flex;
+    line-height: 30px;
+    align-items: center;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.input {
+    width: 100%;
+    height: 45px;
+    line-height: 30px;
+    padding: 0 4rem;
+    padding-left: 3rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(248, 250, 252, 0.9);
+    color: #0d0c22;
+    transition: .5s ease;
+}
+
+.input::placeholder {
+    color: #94a3b8;
+}
+
+.input:focus, .input:hover {
+    outline: none;
+    border-color: rgba(129, 140, 248);
+    background-color: #fff;
+    box-shadow: 0 0 0 5px rgba(129, 140, 248, 0.3);
+}
+
+.icon {
+    position: absolute;
+    left: 2rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    stroke: currentColor;
+    color: #94a3b8;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: absolute;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.eye-button {
+    right: 4rem;
+}
+
+.submit-button {
+    right: 1.5rem;
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #94a3b8;
+}
+
+.eye-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.feedback-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+#strength-indicator {
+    color: #FFF;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#requirements {
+    display: none;
+    font-size: 14px;
+}
+
+.requirement {
+    color: #00ffff;
+    margin: 0.3rem 0;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.requirement.valid {
+    color: #26d730;
+}
+
+.requirement.invalid {
+    color: #ff5925;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .group {
+        padding: 1.5rem 1rem;
+        margin: 0 1rem;
+    }
+
+    .input {
+        padding: 0 3.5rem;
+        padding-left: 2.5rem;
+        font-size: 14px;
+    }
+
+    .icon {
+        left: 1.5rem;
+    }
+
+    .eye-button {
+        right: 3rem;
+    }
+
+    .submit-button {
+        right: 1rem;
+    }
+
+    .feedback-container {
+        padding: 0.8rem;
+        margin: 0.8rem 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    #strength-indicator {
+        font-size: 14px;
+    }
+
+    #requirements {
+        font-size: 12px;
+    }
+
+    .requirement {
+        margin: 0.2rem 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .group {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .input {
+        padding: 0 3rem;
+        padding-left: 2.2rem;
+        font-size: 13px;
+    }
+
+    .icon {
+        left: 1.2rem;
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    .eye-button {
+        right: 2.5rem;
+    }
+
+    .submit-button {
+        right: 0.8rem;
+    }
+
+    button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .eye-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .feedback-container {
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    .group {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
